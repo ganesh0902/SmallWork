@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.test.model.impl.smallworkModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="quoteReference" />
+			<basic name="projectName" />
+			<basic name="customerAddress" />
+			<basic name="workType" />
+			<basic name="leadSource" />
+			<basic name="productSpecific" />
+			<basic name="description" />
+			<basic name="customerName" />
+			<basic name="postcode" />
+			<basic name="sitename" />
+			<basic name="lead" />
+			<basic name="location" />
+			<basic name="enduser" />
+			<basic name="contactName" />
+			<basic name="phone" />
+			<basic name="email" />
+			<basic name="projectDate" />
+			<basic name="anticipatedDate" />
+			<basic name="endDate" />
+			<basic name="endDate2" />
+			<basic name="bidInfor" />
+			<basic name="quotationName" />
+			<basic name="projectCost" />
+			<basic name="dateShowOnQuote" />
+			<basic name="projectSell" />
+			<basic name="quoteSubmitDate" />
+			<basic name="winProbability" />
+			<basic name="stage" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.test.model.impl.statusofsubmittedquoteModelImpl">
+		<attributes>
+			<id name="sosqId" />
+			<basic name="sosq" />
+			<basic name="winprob" />
+			<basic name="aorderdate" />
+			<basic name="ppstartdate" />
+			<basic name="ppenddate" />
+			<basic name="createDate" />
+			<basic name="customercomittype" />
+			<basic name="upload" />
+			<basic name="pon" />
+			<basic name="valueofcommit" />
+			<basic name="rmethod" />
+			<basic name="rdate" />
+			<basic name="pcdc" />
+			<basic name="onwhatbasis" />
+			<basic name="recordproposedcourse" />
+			<basic name="comments" />
+			<basic name="currrentId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.test.model.impl.smallworkImpl" name="smallwork">
+		<table name="smallwork" />
+		<attributes />
+	</entity>
+	<entity class="com.test.model.impl.statusofsubmittedquoteImpl" name="statusofsubmittedquote">
+		<table name="statusofsubmittedquote" />
+		<attributes />
+	</entity>
+</entity-mappings>

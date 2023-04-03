@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.test.model.smallwork">
+		<field name="id" type="int" />
+		<field name="quoteReference" type="String" />
+		<field name="projectName" type="String" />
+		<field name="customerAddress" type="String" />
+		<field name="workType" type="String" />
+		<field name="leadSource" type="String" />
+		<field name="productSpecific" type="String" />
+		<field name="description" type="String" />
+		<field name="customerName" type="String" />
+		<field name="postcode" type="String" />
+		<field name="sitename" type="String" />
+		<field name="lead" type="String" />
+		<field name="location" type="String" />
+		<field name="enduser" type="String" />
+		<field name="contactName" type="String" />
+		<field name="phone" type="int" />
+		<field name="email" type="String" />
+		<field name="projectDate" type="String" />
+		<field name="anticipatedDate" type="String" />
+		<field name="endDate" type="String" />
+		<field name="endDate2" type="String" />
+		<field name="bidInfor" type="String" />
+		<field name="quotationName" type="String" />
+		<field name="projectCost" type="int" />
+		<field name="dateShowOnQuote" type="String" />
+		<field name="projectSell" type="int" />
+		<field name="quoteSubmitDate" type="String" />
+		<field name="winProbability" type="String" />
+		<field name="stage" type="String" />
+	</model>
+	<model name="com.test.model.statusofsubmittedquote">
+		<field name="sosqId" type="long" />
+		<field name="sosq" type="String" />
+		<field name="winprob" type="String" />
+		<field name="aorderdate" type="String" />
+		<field name="ppstartdate" type="String" />
+		<field name="ppenddate" type="String" />
+		<field name="createDate" type="String" />
+		<field name="customercomittype" type="String" />
+		<field name="upload" type="String" />
+		<field name="pon" type="long" />
+		<field name="valueofcommit" type="long" />
+		<field name="rmethod" type="String" />
+		<field name="rdate" type="String" />
+		<field name="pcdc" type="String" />
+		<field name="onwhatbasis" type="String" />
+		<field name="recordproposedcourse" type="String" />
+		<field name="comments" type="String" />
+		<field name="currrentId" type="Integer" />
+	</model>
+</model-hints>

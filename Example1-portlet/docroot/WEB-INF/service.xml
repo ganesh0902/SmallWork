@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.test">
+	<author>dell</author>
+	<namespace>ga</namespace>
+    <entity name="smallwork" local-service="true" table="smallwork">
+        <column name="id" type="int" primary="true" id-type="increment"></column>
+        <column name="quoteReference" type="String"></column>
+        <column name="projectName" type="String"></column>
+        <column name="customerAddress" type="String"></column>
+        <column name="workType" type="String"></column>
+        <column name="leadSource" type="String"></column>
+        <column name="productSpecific" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="customerName" type="String"></column>
+        <column name="postcode" type="String"></column>
+        <column name="sitename" type="String"></column>
+        <column name="lead" type="String"></column>
+        <column name="location" type="String"></column>
+        <column name="enduser" type="String"></column>
+        <column name="contactName" type="String"></column>
+        <column name="phone" type="int"></column>
+        <column name="email" type="String"></column>
+        <column name="projectDate" type="String"></column>
+        <column name="anticipatedDate" type="String"></column>
+        <column name="endDate" type="String"></column>
+        <column name="endDate2" type="String"></column>
+        <column name="bidInfor" type="String"></column>
+        <column name="quotationName" type="String"></column>
+        <column name="projectCost" type="int"></column>
+        <column name="dateShowOnQuote" type="String"></column>
+        <column name="projectSell" type="int"></column>
+        <column name="quoteSubmitDate" type="String"></column>
+        <column name="winProbability" type="String"></column>
+        <column name="stage" type="String"></column>
+    </entity>
+    <!-- table of status of submited quote -->
+    <entity name="statusofsubmittedquote" local-service="true" remote-service="true" table="statusofsubmittedquote">
+
+		<!-- PK fields -->
+
+		<column name="sosqId" type="long" primary="true" id-type="increment"/>
+
+		<!-- Group instance -->
+        <column name="sosq" type="String"></column>
+
+		<column name="winprob" type="String" />
+
+		<!-- Audit fields -->
+
+		<column name="aorderdate" type="String" />
+		<column name="ppstartdate" type="String" />
+		<column name="ppenddate" type="String" />
+		<column name="createDate" type="String" />
+		<column name="customercomittype" type="String" />
+
+		<!-- Other fields -->
+
+		<column name="upload" type="String" />
+		<column name="pon" type="long" />
+		<column name="valueofcommit" type="long" />
+		<column name="rmethod" type="String" />
+		<column name="rdate" type="String" />
+
+		<!-- Order -->
+        <column name="pcdc" type="String"></column>
+        <column name="onwhatbasis" type="String"></column>
+        <column name="recordproposedcourse" type="String"></column>
+        <column name="comments" type="String"></column>
+        <column name="currrentId" type="Integer"></column>
+		
+	</entity>
+</service-builder>

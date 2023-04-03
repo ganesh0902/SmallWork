@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.test.service.smallworkLocalService" class="com.test.service.impl.smallworkLocalServiceImpl" />
+	<bean id="com.test.service.smallworkService" class="com.test.service.impl.smallworkServiceImpl" />
+	<bean id="com.test.service.persistence.smallworkPersistence" class="com.test.service.persistence.smallworkPersistenceImpl" parent="basePersistence" />
+	<bean id="com.test.service.statusofsubmittedquoteLocalService" class="com.test.service.impl.statusofsubmittedquoteLocalServiceImpl" />
+	<bean id="com.test.service.statusofsubmittedquoteService" class="com.test.service.impl.statusofsubmittedquoteServiceImpl" />
+	<bean id="com.test.service.persistence.statusofsubmittedquotePersistence" class="com.test.service.persistence.statusofsubmittedquotePersistenceImpl" parent="basePersistence" />
+</beans>
