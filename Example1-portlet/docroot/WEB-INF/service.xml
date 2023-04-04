@@ -19,7 +19,7 @@
         <column name="location" type="String"></column>
         <column name="enduser" type="String"></column>
         <column name="contactName" type="String"></column>
-        <column name="phone" type="int"></column>
+        <column name="phone" type="String"></column>
         <column name="email" type="String"></column>
         <column name="projectDate" type="String"></column>
         <column name="anticipatedDate" type="String"></column>

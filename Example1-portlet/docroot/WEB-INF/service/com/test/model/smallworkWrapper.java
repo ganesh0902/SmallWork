@@ -173,7 +173,7 @@ public class smallworkWrapper implements smallwork, ModelWrapper<smallwork> {
 			setContactName(contactName);
 		}
 
-		Integer phone = (Integer)attributes.get("phone");
+		String phone = (String)attributes.get("phone");
 
 		if (phone != null) {
 			setPhone(phone);
@@ -584,7 +584,7 @@ public class smallworkWrapper implements smallwork, ModelWrapper<smallwork> {
 	* @return the phone of this smallwork
 	*/
 	@Override
-	public int getPhone() {
+	public java.lang.String getPhone() {
 		return _smallwork.getPhone();
 	}
 
@@ -594,7 +594,7 @@ public class smallworkWrapper implements smallwork, ModelWrapper<smallwork> {
 	* @param phone the phone of this smallwork
 	*/
 	@Override
-	public void setPhone(int phone) {
+	public void setPhone(java.lang.String phone) {
 		_smallwork.setPhone(phone);
 	}
 

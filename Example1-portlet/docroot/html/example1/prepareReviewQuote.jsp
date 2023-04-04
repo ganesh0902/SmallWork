@@ -77,9 +77,9 @@ tr td:nth-child(2) {
 			smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); 
 	%> 
 
-	<div class="outer" id="flip1" style="border: 1px solid gray;border-bottom: none;size: 20px;padding: 10px 0px 10px 0px; background: #e4e6e9;"><span class="arrow1"><span class="arrow-up1">&#x25BC;</span><span class="arrow-down1">&#9658;</span></span>Quote Form
+	<div class="outer" id="flip10" style="border: 1px solid gray;border-bottom: none;size: 20px;padding: 10px 0px 10px 0px; background: #e4e6e9;"><span class="arrow10"><span class="arrow-up10">&#x25BC;</span><span class="arrow-down10">&#9658;</span></span>Project Info
 	</div>
-	<div id="projectInfoPanel">
+	<div id="projectInfoPanel3" style="border: 1px solid black;">
 		<div id="projectInfos" style="display: flex; margin-top: 20px;">
 			<div id="projectChild1" style="flex:3;">
 					<div>
@@ -137,9 +137,9 @@ tr td:nth-child(2) {
 			</div>
 		</fieldset>
 	</div>		 
-	<div class="outer" id="flip2" style="border: 1px solid gray;border-bottom: none;size: 20px;padding: 10px 0px 10px 0px; background: #e4e6e9;"><span class="arrow2"><span class="arrow-up2">&#x25BC;</span><span class="arrow-down2">&#9658;</span></span>Quote Form
+	<div class="outer" id="flip20" style="border: 1px solid gray;border-bottom: none;size: 20px;padding: 10px 0px 10px 0px; background: #e4e6e9;"><span class="arrow20"><span class="arrow-up20">&#x25BC;</span><span class="arrow-down20">&#9658;</span></span>Quote Form
 	</div>
-	<div id="quoteInfoPanel">
+	<div id="quoteInfoPanel" style="border: 1px solid black;">
 		<div>
 			<div style="display: flex;margin-top: 30px;">
 				<div style="flex:4">
@@ -217,24 +217,23 @@ tr td:nth-child(2) {
 
 $( document ).ready(function() {
 	
-	/* $(".arrow-down1").hide();
-	$("#flip1").click(function(){
-	    $('.arrow-up1,.arrow-down1').toggle();
-	$("#panel1").slideToggle("slow");
+	
+	//this is  for toggle button
+	$(".arrow-down10").hide();
+	$("#flip10").click(function(){
+		
+	    $('.arrow-up10,.arrow-down10').toggle();
+		$("#projectInfoPanel3").slideToggle("slow");
 	});
 	
-	$(".arrow-down2").hide();
-	
-	$("#flip2").click(function(){
-	    $('.arrow-up2,.arrow-down2').toggle();
-	$("#panel_Of_Project_Info").slideToggle("slow");
+	$(".arrow-down20").hide();
+	$("#flip20").click(function(){
+		
+	    $('.arrow-up20,.arrow-down20').toggle();
+		$("#quoteInfoPanel").slideToggle("slow");
 	});
-	$(".arrow-down3").hide();
-	$("#flip3").click(function(){
-	    $('.arrow-up3,.arrow-down3').toggle();
-	$("#panel3").slideToggle("slow");
-	}); */
 	
+	//this is for review pages
 	$("#reviewPage").hide();
 	$("#current").click(function(){
 		$("#reviewPage").hide();
@@ -246,6 +245,7 @@ $( document ).ready(function() {
 		$("#currentPage").hide();
 		$("#reviewPage").show();
 	});
+
 });
 </script>		
 </body>

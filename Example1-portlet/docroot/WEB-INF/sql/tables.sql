@@ -14,7 +14,7 @@ create table smallwork (
 	location VARCHAR(75) null,
 	enduser VARCHAR(75) null,
 	contactName VARCHAR(75) null,
-	phone INTEGER,
+	phone VARCHAR(75) null,
 	email VARCHAR(75) null,
 	projectDate VARCHAR(75) null,
 	anticipatedDate VARCHAR(75) null,

@@ -231,11 +231,11 @@ public class smallworkSoap implements Serializable {
 		_contactName = contactName;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return _phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		_phone = phone;
 	}
 
@@ -358,7 +358,7 @@ public class smallworkSoap implements Serializable {
 	private String _location;
 	private String _enduser;
 	private String _contactName;
-	private int _phone;
+	private String _phone;
 	private String _email;
 	private String _projectDate;
 	private String _anticipatedDate;

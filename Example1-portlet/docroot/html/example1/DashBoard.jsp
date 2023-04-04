@@ -254,7 +254,7 @@ body {
 								  <p:param name="stage" value="prepareReviewQuote"></p:param>
 								<p:param name="jspPage" value="/html/example1/prepareReviewQuote.jsp"></p:param>
 							   </p:renderURL> 
-								<a href="${prepareReviewQuote }">prepareReviewQuote</a></td>
+								<a href="${prepareReviewQuote }">prepareReviseQuote</a></td>
 								
 							<%}
 							%>

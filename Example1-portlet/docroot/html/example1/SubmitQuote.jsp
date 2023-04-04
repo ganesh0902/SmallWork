@@ -31,6 +31,15 @@
 integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" 
   crossorigin="anonymous"></script>
+  
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js" integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/basic.css" rel="stylesheet"/>
 	
 <style type="text/css">
 	
@@ -278,6 +287,115 @@ integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="ano
 div.timeline:last-of-type .timeline__middle{
 	height:10px;
 }
+
+#parent{
+		width: 1200px;
+		height: 120px;
+		display: flex;
+		flex-direction: row;
+	
+	}
+	#child1{
+	
+		flex:6;
+		border: 0.5px solid grey;
+	}
+	#child2{
+		flex:2;
+		border-bottom: 0.5px solid grey;
+		border-top: 0.5px solid grey;
+	}
+	#child3{
+		flex:2;
+		border: 0.5px solid grey;	
+	}
+	.button {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.button1 {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.file {
+		
+		width:100px;
+  		border: 2px solid #00aeff;
+ 		color: #00aeff;
+ 		background-color: white;
+  		padding: 4px 8px;
+  		border-radius: 3px;
+  		font-size: 20px;
+  		font-weight: bold;
+}
+ 		#parent{
+		width: 500px;
+		height: 150px;
+		display: flex;
+		flex-direction: row;
+		margin-left: 30%;
+		
+	}
+	#child1{
+		flex:5;
+		border: 0.5px solid grey;
+	}
+	#child2{
+		flex:3;
+		border-bottom: 0.5px solid grey;
+		border-top: 0.5px solid grey;
+	}
+	#child3{
+		flex:2;
+		border: 0.5px solid grey;	
+	}
+	.button {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.button1 {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.file {
+		
+		width:100px;
+  		border: 2px solid #00aeff;
+ 		color: #00aeff;
+ 		background-color: white;
+  		padding: 4px 8px;
+  		border-radius: 3px;
+  		font-size: 20px;
+  		font-weight: bold;
+}
+.flex-container{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.right-item{
+		width: 65%;
+	}
+	.right-item1{
+	justify-content: flex-end;
+	}
 	</style>	
 </head>
 <body>
@@ -516,7 +634,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 												<td><label
 													style="margin-top: -70px; margin-right: -70px;" class="error"  id="phoneError">Phone
 												</label></td>
-												<td style="height: 75px;"><input type="text" name="phone" value="<%=getRecord.getPhone() %>"
+												<td style="height: 75px;"><input type="text" name="phone"  value="<%=getRecord.getPhone()%>" 
 													style="height: 70%; margin-top: -90px; width: 100%;"
 													size="25" height="32%;" id="phone" onkeyup="lettersDigit(this)"></td>
 											</tr>
@@ -611,25 +729,49 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 										<legend
 											style="width: fit-content; margin-left: 10px; border-bottom: none; color: rgb(71, 143, 202); font-size: 16px; font-family: Segoe UI;">Upload
 											RTQ Documents</legend>
-										<div
-											style="display: flex; border: 1px solid black; width: 90%; margin-left: 30px; margin-top: 30px;">
-											<div style="flex: 5;"></div>
-											<div style="flex: 3;border: 1px solid black;text-align: center;">
-												<span><i class="fa fa-upload" style="font-size: 36px;"></i></span>
-												<label>Drop file here <br> or
-												</label>
-												<button
-													style="border: 1px solid green; color: green; width: 90%; height: 25%;">Brows
-													File</button>
+										
+										<div class="upload-container" id="owb1">
+											<div id="parent"
+												style="margin-right: 20%; margin-left: 20px; width: 550px;">
+
+												<div id="child1">
+													<table style="margin-top: 10px; margin-left: 10px;">
+														<tr id="preview1">
+															<td><span></span>
+															<td>
+														</tr>
+													</table>
+												</div>
+
+												<div class="mydropzone1" id="child2">
+													<svg style="margin-left: 70px; margin-top: 20px"
+														xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+														fill="currentColor" class="bi bi-cloud-arrow-up"
+														viewBox="0 0 16 16">
+ 															 <path fill-rule="evenodd"
+															d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
+  															 <path
+															d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+															</svg>
+													<p style="margin-left: 30px; margin-top: 0px;">
+														Drop Files Here <span style="margin-left: 45px;">or</span>
+
+													</p>
+													<button class="file mydropzone" type="button"
+														style="margin-left: 25px; margin-top: -1px; width: 70%;">BrowseFiles</button>
+												</div>
+												<div id="child3">
+													<br> <br>
+													<button type="button" class="button1"
+														style="margin-left: 5px;">LinkToFile</button>
+													<br>
+													<button type="button" class="button"
+														style="margin-left: 5px; margin-top: 5px;">LinkToDropbox</button>
+												</div>
+												<input type="hidden" name='<portlet:namespace/>owb'
+													id="files1">
 											</div>
-											<div style="flex: 2; border: 1px solid black;">
-												<button
-													style="background-color: #9585bf; width: 100%; color: white; margin-top: 40px; font-size: 12px; border: none;">
-													Link to file</button>
-												<button
-													style="background-color: #9585bf; width: 100%; color: white; margin-top: 20px; margin-bottom: 30px; font-size: 12px; border: none;">Link
-													to Browser</button>
-											</div>
+											<div></div>
 										</div>
 									</fieldset>
 								</div>
@@ -643,31 +785,56 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 						class="arrow-down3">&#9658;</span></span>Quote Info
 				</div>
 				<div id="panel3"
-					style="border: 1px solid black; width: 96%; margin-left: 24px;">
+					style=" width: 96%;border:1px solid black; margin-left: 24px;">
 
 					<div style="width: 100%;">
 						<label style="position: relative; top: 100px; left: 190px;">Bid
 							Sheet</label>
-						<div
-							style="display: flex; border: 1px solid black; width: 50%; margin-left: 290px; margin-top: 30px;">
-							<div style="flex: 5;"></div>
-							<div style="flex: 2; border: 1px solid black;">
-								<span style="padding-left: 40px;"><i class="fa fa-upload"
-									style="font-size: 36px"></i></span> <label style="padding-left: 20px;">Drop
-									file here <br> or
-								</label>
-								<button
-									style="border: 1px solid green; color: green; width: 90%; height: 25%; margin-left: 5px;">Brows
-									File</button>
+						 <div
+							style="display: flex; width: 50%; margin-left: 290px; margin-top: 30px;">
+							 <div style="flex: 5;"></div>
+							
+							<div class="upload-container" id="owb1">
+							<div id="parent" style="margin-left: 2%; width: 600px;">
+
+								<div id="child1">
+									<table style="margin-top: 10px; margin-left: 10px;">
+										<tr id="preview2">
+											<td><span></span>
+											<td>
+										</tr>
+									</table>
+								</div>
+								<div class="mydropzone2" id="child2">
+									<svg style="margin-left: 50px; margin-top: 20px"
+										xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+										fill="currentColor" class="bi bi-cloud-arrow-up"
+										viewBox="0 0 16 16">
+ 				 						<path fill-rule="evenodd"
+											d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
+  											 <path
+										d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+										</svg>
+									<p style="margin-left: 30px;">
+										Drop Files Here <span style="margin-left: 45px;">or</span>
+
+									</p>
+									<button class="file mydropzone" type="button"
+										style="margin-left: 26px; margin-top: -1px; width: 70%;">BrowseFiles</button>
+								</div>
+								<div id="child3">
+									<br> <br>
+									<button type="button" class="button1" style="margin-left: 5px;">LinkToFile</button>
+									<br>
+									<button type="button" class="button"
+										style="margin-left: 5px; margin-top: 5px;">LinkToDropbox</button>
+								</div>
+								<input type="hidden" name='<portlet:namespace/>owb' id="files2">
 							</div>
-							<div style="flex: 2; border: 1px solid black;">
-								<button
-									style="background-color: #9585bf; width: 100%; color: white; margin-top: 40px; font-size: 12px; border: none;">
-									Link to file</button>
-								<button
-									style="background-color: #9585bf; width: 100%; color: white; margin-top: 20px; margin-bottom: 30px; font-size: 12px; border: none;">Link
-									to Browser</button>
-							</div>
+							<div></div>
+						</div>
+							
+							
 						</div>
 						<!--  file upload section completed-->
 						<div style="width: 90%;">
@@ -676,7 +843,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 									<td><label style="margin-left: 20px;" id="bidInforError" class="error">Does the Bid
 											Sheet meet company <br>authorisation criteria?
 									</label></td>
-									<td><select style="height: 32%;" id="bidInfor" name="bidInfor">
+									<td style="height: 120px;"><select id="bidInfor" name="bidInfor" style="height: 40%;">
 											<option value="select">Select</option>
 											<option>Yes</option>
 											<option>No</option>
@@ -775,49 +942,62 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 						<!-- Bid sheet section close here -->
 					</div>
 					<div style="width: 100%;">
-						<div style="display: flex;">
-							<div style="flex:6;">
+						 <div style="display: flex;">
+					
 								<div
-									style="display: flex; border: 1px solid black; width: 40%; margin-left: -20px; margin-top: 30px;margin-left: 150px;position: relative;left: -50px;">
-									<div style="flex: 4;">
-									</div>
-									<div style="flex: 3;height: 140px;border: 1px solid black;">
-										<span><i class="fa fa-upload" style="font-size: 36px"></i></span>
-										<label>Drop file here <br> or
-										</label>
-										<button
-											style="border: 1px solid green; color: green; width: 90%; height: 25%;">Brows
-											File</button>
-									</div>
-									<div style="flex: 2; border: 1px solid black;height: 140px;">
-										<button
-											style="background-color: #9585bf; width: 100%; color: white; margin-top: 40px; font-size: 12px; border: none;">
-											Link to file</button>
-										<button
-											style="background-color: #9585bf; width: 100%; color: white; margin-top: 20px; margin-bottom: 30px; font-size: 12px; border: none;">Link
-											to Browser</button>
-									</div>
-									
-								</div>	
-									<div style="flex:4;width: 35%;border: 1px solid black;position: relative;top: -140px;left: 700px;">
-										<div style="display: flex;">
-											<div style="flex:5;height: 140px;border: 1px solid black;">
+					style="width: 100%; margin-bottom: 180px; margin-left: 230px; margin-top: 20px;">
+					<div class="upload-container" id="owb1">
+					<label style="position: relative;top: 70px;left: -120px;">Quote Document *</label>
+						<div id="parent"
+							style="margin-right: 20%; margin-left: 20px; width: 550px;">
 												
-											</div>
-											<div style="flex:5;height: 140px;border: 1px solid black;">
-											
-											</div>
-										</div>					
-								</div>
-								<span style="position: relative;top: -240px;left: 560px;">Generate Quote <br>Document</span>	
-							</div><!-- file upload close -->
+							<div id="child1">
+								<table style="margin-top: 10px; margin-left: 10px;">
+									<tr id="preview3">
+										<td><span></span>
+										<td>
+									</tr>
+								</table>
+							</div>
+
+							<div class="mydropzone3" id="child2">
+								<svg style="margin-left: 70px; margin-top: 20px"
+									xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+									fill="currentColor" class="bi bi-cloud-arrow-up"
+									viewBox="0 0 16 16">
+ 								 <path fill-rule="evenodd"
+										d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
+  								<path
+								d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+									</svg>
+								<p style="margin-left: 30px; margin-top: 0px;">
+									Drop Files Here <span style="margin-left: 45px;">or</span>
+
+								</p>
+								<button class="file mydropzone" type="button"
+									style="margin-left: 25px; margin-top: -1px; width: 70%;">BrowseFiles</button>
+							</div>
+							<div id="child3">
+								<br> <br>
+								<button type="button" class="button1" style="margin-left: 5px;">LinkToFile</button>
+								<br>
+								<button type="button" class="button"
+									style="margin-left: 5px; margin-top: 5px;">LinkToDropbox</button>
+							</div>
+							<input type="hidden" name='<portlet:namespace/>owb' id="files3">
 						</div>
-						<div style="display: flex;">
+						<div></div>
+					</div>
+				</div>
+																
+						</div><!-- file upload close -->
+						</div>
+						<div style="display: flex; ;margin-top: 0px;">
 							<div style="flex:5">
 							<table style="margin-top: -160px;margin-left: 45px;">
 								<tr>
 									<td> <label id="quotationError" class="error">Quotation on our Format</label></td>
-									<td><select id="quotation" name="quotationName">
+									<td style="height: 160%;position: relative;bottom: -20px;"><select id="quotation" name="quotationName" style="position: relative;top: -15px;width: 100%;" >
 										<option value="select">Select</option>
 										<option>Yes</option>
 										<option>No</option>	
@@ -833,7 +1013,9 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 								<table style="margin-top: -160px;margin-left: -20px;">
 								<tr>
 									<td> <label id="datesError" class="error">Date shown on Quote</label></td>
-									<td><input type="date" name="dateShowOnQuote" style="height: 34px;" id="dates"></td>
+									<td><input type="text" name="dateShowOnQuote" style="height: 34px;" id="showDateInput">
+									<span id="calendericonShowDate">&#128197;</span>
+									</td>
 								</tr>
 								<tr>
 									<td> <label id="costsError" class="error">Overall Project Sell(£)</label></td>
@@ -853,11 +1035,11 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 		<table class="SO" style="margin-left: 10px;">
 			<tr>
 				<td><label id="lqsa">Quote Submitted On<span style="color:red;font-weight:bold">*</span></label></td>
-				<td><input class="border" readonly="readonly" id="datepicker-input" type="text" name="quoteSubmitDate"><span id="calendericon">&#128197;</span><span id="qsaerror"></span></td>				 
+				<td style="height: 20px;position: relative;bottom:-20px; "><input class="border" readonly="readonly" id="datepicker-input" type="text" name="quoteSubmitDate" style="margin-top: -40px;padding-bottom: 20px;padding-top: 10px;"><span id="calendericon">&#128197;</span><span id="qsaerror"></span></td>				 
 			</tr>
 			<tr >
 				<td><label id="lwinp">% Win Probability<span style="color:red;font-weight:bold">*</span></label></td>
-				<td><input type="text" id="winp"  name="winProbability"> <span id="winperror"></span></td>
+				<td style="height: 90%;position: relative;top: 20px;"><input type="text" id="winp"  name="winProbability" style="height: 160%;margin-top: -40px;padding-bottom: 10px;"> <span id="winperror"></span></td>
 			</tr>
 		</table>
 		<br>
@@ -901,7 +1083,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 	</div>
 		</div>
 		<div>
-			<textarea style="width: 100%;margin-top: 30px;padding-bottom: 20px;"></textarea>
+			<textarea style="width: 100%;margin-top: 30px;padding-bottom: 20px;" required></textarea>
 		</div>
 		<div style="float: right;">
 			<button class="btn btn-primary" style="padding: 10px 20px 10px 20px">Save</button>
@@ -971,12 +1153,313 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 		  $('.toggle-button3').click(function() {  
 		    $('.toggle-content3').slideToggle();
 		  });  
-		  
+		 
 		  $("#calendericon").click(function(){
-			  $("#datepicker-input").datepicker();
+			  $("#datepicker-input").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
 			  $("#datepicker-input").focus();
 		  });
+		  $("#calendericonShowDate").click(function(){
+			  $("#showDateInput").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+			  $("#showDateInput").focus();
+		  });
+		  
+		  /* Drop zone API */
+			
+		     var mydz1= new Dropzone(".mydropzone1",{
+		    	url: "/Dropzone",
+		        maxFilesize: 10,
+		        addRemoveLinks: true,
+		        paramName: "file",	
+		        maxFiles: 5,
+		        autoProcessQueue: false,
+		            
+		    });
+		   
+		     mydz1.on("addedfile", function(file) {
+		    	 
+		    	   this.removeFile(file);
+		    	  mydz1.createThumbnail(file,null,120,120);
+
+		    	  $("#files1").val(file.name);
+		    	   
+		    	  document.querySelector("#preview1").innerHTML =  file.name + "  " + file.size + " bytes";
+		    	  
+		    	}); 
+		     var mydz2= new Dropzone(".mydropzone2",{
+			    	url: "/Dropzone",
+			        maxFilesize: 10,
+			        addRemoveLinks: true,
+			        paramName: "file",	
+			        maxFiles: 5,
+			        autoProcessQueue: false,
+			            
+			    });
+			   
+			     mydz2.on("addedfile", function(file) {
+			    	 
+			    	   this.removeFile(file);
+			    	  mydz1.createThumbnail(file,null,120,120);
+
+			    	  $("#files2").val(file.name);
+			    	   
+			    	  document.querySelector("#preview2").innerHTML =  file.name + "  " + file.size + " bytes";
+			    	  
+			    	}); 
+			     var mydz3= new Dropzone(".mydropzone3",{
+				    	url: "/Dropzone",
+				        maxFilesize: 10,
+				        addRemoveLinks: true,
+				        paramName: "file",	
+				        maxFiles: 5,
+				        autoProcessQueue: false,
+				            
+				    });
+				   
+				     mydz3.on("addedfile", function(file) {
+				    	 
+				    	   this.removeFile(file);
+				    	  mydz1.createThumbnail(file,null,120,120);
+
+				    	  $("#files3").val(file.name);
+				    	   
+				    	  document.querySelector("#preview3").innerHTML =  file.name + "  " + file.size + " bytes";
+				    	  
+				    	}); 
+		  		  	  
+		  
+		  $("#validation").click(function(){
+				var quote=$("#quote").val();
+				var projectName=$("#projectName").val();
+				var customerAddress=$("#customerAddress").val();
+				var workType=$("#workType").val();
+				var leadSource=$("#leadSource").val();
+				var productSpecific=$("#productSpecific").val();
+				var description=$("#description").val();
+				
+				var customerName=$("#customerName").val();
+				var postcode=$("#postcode").val();
+				var sitename=$("#sitename").val();
+				var lead=$("#lead").val();
+				var location=$("#location").val();
+				var enduser=$("#enduser").val();
+				
+				var contact=$("#contact").val();
+				var phone=$("#phone").val();
+				var email=$("#email").val();
+				
+				var bidInfor=$("#bidInfor").val();
+				
+				var quotation=$("#quotation").val();
+				var projectcost=$("#projectcost").val();
+				
+				//var dates=$("#dates").val();
+				var costs=$("#costs").val();
+				
+				/*projectDateError  anticipatedDate  */
+				var projectDate=$("#projectDate").val();
+				var anticipatedDate=$("#anticipatedDate").val();
+				
+				var datesi=$("#datepicker-input").val();
+				
+				//var winperror=$("#winperror").val();
+				
+				var winperror=$("#winp").val();
+				//alert("==="+v);
+				var found=true;
+				
+				
+				
+				if(projectName=="")
+				{
+					document.getElementById("projectName").style.border="1px solid red";
+					document.getElementById("projectNameError").style.color=" red";
+					found=false;
+				}	
+				else{
+					document.getElementById("projectName").style.border="1px solid black";
+					document.getElementById("projectNameError").style.color="black";
+					
+				}
+				if(customerAddress=="")
+				{
+					document.getElementById("customerAddress").style.border="1px solid red";
+					document.getElementById("customerAddressError").style.color=" red";
+					found=false;customerAddress
+				}
+				else{
+					document.getElementById("customerAddress").style.border="1px solid black";
+					document.getElementById("customerAddressError").style.color=" black";
+				}
+				
+				if(description=="")
+				{
+					document.getElementById("description").style.border="1px solid red";
+					document.getElementById("descriptionError").style.color="red";
+				}	
+				else{
+					document.getElementById("description").style.border="1px solid black";
+					document.getElementById("descriptionError").style.color="black";
+				}
+				if(customerName=="")
+				{
+					document.getElementById("customerName").style.border="1px solid red";
+					document.getElementById("customerNameError").style.color="red";
+					found=false;
+				}	
+				else{
+					document.getElementById("customerName").style.border="1px solid black";
+					document.getElementById("customerNameError").style.color="black";
+				}
+				if(postcode=="")
+				{	
+					document.getElementById("postcode").style.border="1px solid red";
+					document.getElementById("postcodeError").style.color="red";
+					found=false;
+				}	
+				else{
+					
+					document.getElementById("postcode").style.border="1px solid black";
+					document.getElementById("postcodeError").style.color="black";
+				}
+				if(sitename=="")
+				{
+					document.getElementById("sitename").style.border="1px solid red";
+					document.getElementById("sitenameError").style.color="red";
+					found=false;			
+				}
+				else{
+
+					document.getElementById("sitename").style.border="1px solid black";
+					document.getElementById("sitenameError").style.color="black";
+				}
+				if(lead=="")
+				{
+					document.getElementById("lead").style.border="1px solid red";
+					document.getElementById("leadError").style.color="red";
+					found=false;
+				}
+				else{
+					document.getElementById("lead").style.border="1px solid black";
+					document.getElementById("leadError").style.color="black";
+				}
+				if(enduser=="")
+				{
+					document.getElementById("enduser").style.border="1px solid red";
+					document.getElementById("enduserError").style.color="red";
+					found=false;
+				}
+				else{
+					document.getElementById("enduser").style.border="1px solid black";
+					document.getElementById("enduserError").style.color="black";
+				}
+			 	if(contact=="")
+				{
+					document.getElementById("contact").style.border="1px solid red";
+					document.getElementById("contactError").style.color="red";
+					found=false;
+				}	
+				else{
+					document.getElementById("contact").style.border="1px solid black";
+					document.getElementById("contactError").style.color="black";
+				}
+			 	 if(phone=="")
+				{
+					document.getElementById("phone").style.border="1px solid red";
+					document.getElementById("phoneError").style.color="red";
+					
+					found=false;
+				}
+				else{
+					 document.getElementById("phone").style.border="1px solid black";
+					 document.getElementById("phoneError").style.color="black";	
+					 var leng=phone.length;
+						
+					if(leng!=10)
+					{
+						document.getElementById("phone").style.border="1px solid red";
+						document.getElementById("phoneError").style.color="red";
+						found=false;
+					}	
+					 
+				}  
+		 		if(email=="")
+				{
+					document.getElementById("email").style.border="1px solid red";
+					document.getElementById("emailError").style.color="red";
+					
+					found=false;
+				}	
+				else{
+					document.getElementById("email").style.border="1px solid black";
+					document.getElementById("emailError").style.color="black";
+					
+				}  
+		 		
+		 		if(projectcost=="")
+		 		{
+		 			document.getElementById("projectcost").style.border="1px solid red";
+		 			document.getElementById("projectcostError").style.color="red";
+		 			found=false;
+		 		}	
+		 		else{
+
+		 			document.getElementById("projectcost").style.border="1px solid black";
+		 			document.getElementById("projectcostError").style.color="black";
+		 		}
+		 		/* if(dates=="")
+		 		{
+		 			document.getElementById("dates").style.border="1px solid red";
+		 			document.getElementById("datesError").style.color="red";
+		 			found=false;
+		 		}	
+		 		else{
+		 			document.getElementById("dates").style.border="1px solid black";
+		 			document.getElementById("datesError").style.color="black";
+		 			
+		 		} */
+		 		if(costs=="")
+		 		{
+		 			document.getElementById("costs").style.border="1px solid red";
+		 			document.getElementById("costsError").style.color="red";
+		 			found=false;
+		 		}	
+		 		else{
+		 			document.getElementById("costs").style.border="1px solid black";
+		 			document.getElementById("costsError").style.color="black";
+		 		}
+		 		
+		 		if(datesi=="")
+		 		{
+		 			document.getElementById("datepicker-input").style.border="1px solid red";
+		 			document.getElementById("lqsa").style.color="red";
+		 			found=false;
+		 		}	
+		 		else{
+		 			document.getElementById("datepicker-input").style.border="1px solid black";
+		 			document.getElementById("lqsa").style.color="black";
+		 		}
+		 		if(winperror=="")
+		 		{
+		 			document.getElementById("winp").style.border="1px solid red";
+		 			document.getElementById("lwinp").style.color="red";
+		 			found=false;
+		 		}	
+		 		else{
+		 			document.getElementById("winp").style.border="1px solid black";
+		 			document.getElementById("lwinp").style.color="black";
+		 		}
+		 		if(found!=true)
+		 		{
+		 			alert("Please fix the error");
+								
+		 			found=false;
+		 		}	
+		 		else{
+		 			var gen=generate();
+					document.getElementById("quote").value=gen; 
+		 		}	
+		 		return found;
+			});
 	})
-	
 </script>
 </html>

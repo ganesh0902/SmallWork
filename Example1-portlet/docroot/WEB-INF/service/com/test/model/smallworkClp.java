@@ -197,7 +197,7 @@ public class smallworkClp extends BaseModelImpl<smallwork> implements smallwork 
 			setContactName(contactName);
 		}
 
-		Integer phone = (Integer)attributes.get("phone");
+		String phone = (String)attributes.get("phone");
 
 		if (phone != null) {
 			setPhone(phone);
@@ -631,19 +631,19 @@ public class smallworkClp extends BaseModelImpl<smallwork> implements smallwork 
 	}
 
 	@Override
-	public int getPhone() {
+	public String getPhone() {
 		return _phone;
 	}
 
 	@Override
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		_phone = phone;
 
 		if (_smallworkRemoteModel != null) {
 			try {
 				Class<?> clazz = _smallworkRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setPhone", int.class);
+				Method method = clazz.getMethod("setPhone", String.class);
 
 				method.invoke(_smallworkRemoteModel, phone);
 			}
@@ -1316,7 +1316,7 @@ public class smallworkClp extends BaseModelImpl<smallwork> implements smallwork 
 	private String _location;
 	private String _enduser;
 	private String _contactName;
-	private int _phone;
+	private String _phone;
 	private String _email;
 	private String _projectDate;
 	private String _anticipatedDate;

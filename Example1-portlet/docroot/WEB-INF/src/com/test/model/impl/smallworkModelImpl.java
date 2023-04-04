@@ -74,7 +74,7 @@ public class smallworkModelImpl extends BaseModelImpl<smallwork>
 			{ "location", Types.VARCHAR },
 			{ "enduser", Types.VARCHAR },
 			{ "contactName", Types.VARCHAR },
-			{ "phone", Types.INTEGER },
+			{ "phone", Types.VARCHAR },
 			{ "email", Types.VARCHAR },
 			{ "projectDate", Types.VARCHAR },
 			{ "anticipatedDate", Types.VARCHAR },
@@ -89,7 +89,7 @@ public class smallworkModelImpl extends BaseModelImpl<smallwork>
 			{ "winProbability", Types.VARCHAR },
 			{ "stage", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table smallwork (id_ INTEGER not null primary key,quoteReference VARCHAR(75) null,projectName VARCHAR(75) null,customerAddress VARCHAR(75) null,workType VARCHAR(75) null,leadSource VARCHAR(75) null,productSpecific VARCHAR(75) null,description VARCHAR(75) null,customerName VARCHAR(75) null,postcode VARCHAR(75) null,sitename VARCHAR(75) null,lead VARCHAR(75) null,location VARCHAR(75) null,enduser VARCHAR(75) null,contactName VARCHAR(75) null,phone INTEGER,email VARCHAR(75) null,projectDate VARCHAR(75) null,anticipatedDate VARCHAR(75) null,endDate VARCHAR(75) null,endDate2 VARCHAR(75) null,bidInfor VARCHAR(75) null,quotationName VARCHAR(75) null,projectCost INTEGER,dateShowOnQuote VARCHAR(75) null,projectSell INTEGER,quoteSubmitDate VARCHAR(75) null,winProbability VARCHAR(75) null,stage VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table smallwork (id_ INTEGER not null primary key,quoteReference VARCHAR(75) null,projectName VARCHAR(75) null,customerAddress VARCHAR(75) null,workType VARCHAR(75) null,leadSource VARCHAR(75) null,productSpecific VARCHAR(75) null,description VARCHAR(75) null,customerName VARCHAR(75) null,postcode VARCHAR(75) null,sitename VARCHAR(75) null,lead VARCHAR(75) null,location VARCHAR(75) null,enduser VARCHAR(75) null,contactName VARCHAR(75) null,phone VARCHAR(75) null,email VARCHAR(75) null,projectDate VARCHAR(75) null,anticipatedDate VARCHAR(75) null,endDate VARCHAR(75) null,endDate2 VARCHAR(75) null,bidInfor VARCHAR(75) null,quotationName VARCHAR(75) null,projectCost INTEGER,dateShowOnQuote VARCHAR(75) null,projectSell INTEGER,quoteSubmitDate VARCHAR(75) null,winProbability VARCHAR(75) null,stage VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table smallwork";
 	public static final String ORDER_BY_JPQL = " ORDER BY smallwork.id ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY smallwork.id_ ASC";
@@ -335,7 +335,7 @@ public class smallworkModelImpl extends BaseModelImpl<smallwork>
 			setContactName(contactName);
 		}
 
-		Integer phone = (Integer)attributes.get("phone");
+		String phone = (String)attributes.get("phone");
 
 		if (phone != null) {
 			setPhone(phone);
@@ -657,12 +657,17 @@ public class smallworkModelImpl extends BaseModelImpl<smallwork>
 
 	@JSON
 	@Override
-	public int getPhone() {
-		return _phone;
+	public String getPhone() {
+		if (_phone == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _phone;
+		}
 	}
 
 	@Override
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		_phone = phone;
 	}
 
@@ -1079,6 +1084,12 @@ public class smallworkModelImpl extends BaseModelImpl<smallwork>
 
 		smallworkCacheModel.phone = getPhone();
 
+		String phone = smallworkCacheModel.phone;
+
+		if ((phone != null) && (phone.length() == 0)) {
+			smallworkCacheModel.phone = null;
+		}
+
 		smallworkCacheModel.email = getEmail();
 
 		String email = smallworkCacheModel.email;
@@ -1390,7 +1401,7 @@ public class smallworkModelImpl extends BaseModelImpl<smallwork>
 	private String _location;
 	private String _enduser;
 	private String _contactName;
-	private int _phone;
+	private String _phone;
 	private String _email;
 	private String _projectDate;
 	private String _anticipatedDate;

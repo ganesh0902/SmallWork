@@ -205,7 +205,12 @@ public class smallworkCacheModel implements CacheModel<smallwork>,
 			smallworkImpl.setContactName(contactName);
 		}
 
-		smallworkImpl.setPhone(phone);
+		if (phone == null) {
+			smallworkImpl.setPhone(StringPool.BLANK);
+		}
+		else {
+			smallworkImpl.setPhone(phone);
+		}
 
 		if (email == null) {
 			smallworkImpl.setEmail(StringPool.BLANK);
@@ -310,7 +315,7 @@ public class smallworkCacheModel implements CacheModel<smallwork>,
 		location = objectInput.readUTF();
 		enduser = objectInput.readUTF();
 		contactName = objectInput.readUTF();
-		phone = objectInput.readInt();
+		phone = objectInput.readUTF();
 		email = objectInput.readUTF();
 		projectDate = objectInput.readUTF();
 		anticipatedDate = objectInput.readUTF();
@@ -429,7 +434,12 @@ public class smallworkCacheModel implements CacheModel<smallwork>,
 			objectOutput.writeUTF(contactName);
 		}
 
-		objectOutput.writeInt(phone);
+		if (phone == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(phone);
+		}
 
 		if (email == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
@@ -528,7 +538,7 @@ public class smallworkCacheModel implements CacheModel<smallwork>,
 	public String location;
 	public String enduser;
 	public String contactName;
-	public int phone;
+	public String phone;
 	public String email;
 	public String projectDate;
 	public String anticipatedDate;

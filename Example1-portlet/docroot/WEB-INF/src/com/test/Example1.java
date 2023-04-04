@@ -54,7 +54,9 @@ public class Example1 extends MVCPortlet {
 		String location=ParamUtil.getString(request,"location");
 		String enduser=ParamUtil.getString(request,"enduser");		
 		String contactName = ParamUtil.getString(request,"contactName");
-		int phone=ParamUtil.getInteger(request,"phone");	
+		String phone=ParamUtil.getString(request,"phone");	
+		
+		
 		String email=ParamUtil.getString(request,"email");	
 		String projectDate=ParamUtil.getString(request,"projectDate");
 		
@@ -150,7 +152,7 @@ public class Example1 extends MVCPortlet {
 		String location=ParamUtil.getString(request,"location");
 		String enduser=ParamUtil.getString(request,"enduser");		
 		String contactName = ParamUtil.getString(request,"contactName");
-		int phone=ParamUtil.getInteger(request,"phone");	
+		String phone=ParamUtil.getString(request,"phone");	
 		String email=ParamUtil.getString(request,"email");	
 		String projectDate=ParamUtil.getString(request,"projectDate");
 		
@@ -350,7 +352,7 @@ public class Example1 extends MVCPortlet {
 		String location=ParamUtil.getString(request,"location");
 		String enduser=ParamUtil.getString(request,"enduser");		
 		String contactName = ParamUtil.getString(request,"contactName");
-		int phone=ParamUtil.getInteger(request,"phone");	
+		String phone=ParamUtil.getString(request,"phone");	
 		String email=ParamUtil.getString(request,"email");	
 		String projectDate=ParamUtil.getString(request,"projectDate");
 		

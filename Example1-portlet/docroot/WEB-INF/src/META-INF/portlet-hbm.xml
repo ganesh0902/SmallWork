@@ -23,7 +23,7 @@
 		<property name="location" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="enduser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="contactName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="projectDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="anticipatedDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />

@@ -17,7 +17,7 @@
 		<field name="location" type="String" />
 		<field name="enduser" type="String" />
 		<field name="contactName" type="String" />
-		<field name="phone" type="int" />
+		<field name="phone" type="String" />
 		<field name="email" type="String" />
 		<field name="projectDate" type="String" />
 		<field name="anticipatedDate" type="String" />

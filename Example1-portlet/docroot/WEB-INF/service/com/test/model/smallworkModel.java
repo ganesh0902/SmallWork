@@ -286,14 +286,15 @@ public interface smallworkModel extends BaseModel<smallwork> {
 	 *
 	 * @return the phone of this smallwork
 	 */
-	public int getPhone();
+	@AutoEscape
+	public String getPhone();
 
 	/**
 	 * Sets the phone of this smallwork.
 	 *
 	 * @param phone the phone of this smallwork
 	 */
-	public void setPhone(int phone);
+	public void setPhone(String phone);
 
 	/**
 	 * Returns the email of this smallwork.
