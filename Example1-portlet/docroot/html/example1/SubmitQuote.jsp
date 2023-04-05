@@ -396,7 +396,50 @@ div.timeline:last-of-type .timeline__middle{
 	.right-item1{
 	justify-content: flex-end;
 	}
-	</style>	
+#calendericon-project{
+	
+	position: relative;
+	top: -40px;
+	left: 110px;
+}	
+
+#calendericon-anti{
+	
+	position: relative;
+	left: 110px;
+	top: -40px;
+}
+#calendericon-end{
+	position: relative;
+	top: -70px;
+	left: 20px;
+}
+#calendericon-end2{
+	
+	position: relative;
+	left: 150px;
+	top: -100px;
+	margin-right: 30px;
+}
+#anticipatedDate{
+
+	padding: 8px 0px 8px 0px;
+}
+#projectDate{
+padding: 8px 0px 8px 0px;
+
+}
+#calendericonEnd{
+	
+	padding: 7px 0px 7px 0px;
+	margin-left: 15px;
+}
+#calendericonEnd2{
+	
+	padding: 7px 0px 7px 0px;
+	margin-left: 15px;
+}
+</style>	
 </head>
 <body>
 <portlet:actionURL var="updates" name="updateMethod"/>
@@ -669,7 +712,8 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 													<tr>
 														<td><label
 															style="position: relative; top: -66px; left: 120px;">Start
-																Date </label></td>
+																Date </label>																	
+														</td>
 														<br>
 														<td><label
 															style="position: relative; left: -100px; position: relative; top: -30px;" class="error"> Bid
@@ -680,14 +724,18 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 													<tr>
 														<td><label style="margin-top: -20px;" class="error" id="projectDateError">Project
 																Programme</label></td>
-														<td><input type="date" name="projectProgramDate"
-															style="width: 90%; height: 59%; margin-top: -20px;" id="projectDate" name="projectDate"></td>
+														<td><input type="text" 
+															style="width: 130%; height: 59%; margin-top: -20px;" id="projectDate" name="projectDate" value="<%=getRecord.getProjectDate()%>">
+															<span id="calendericon-project">&#128197;</span>	
+														</td>
 													</tr>
 													<tr>
 														<td><label style="margin-top: -20px;" class="error" id="anticipatedDateError">Anticipated
 																Order Date</label></td>
-														<td><input type="date" name="AnticipatedDate"
-															style="width: 90%; height: 59%; margin-top: -20px;" id="anticipatedDate" name="anticipatedDate"></td>
+														<td><input type="text" 
+															style="width: 130%; height: 70%; margin-top: -20px;" id="anticipatedDate" name="anticipatedDate" value="<%=getRecord.getAnticipatedDate()%>">
+															<span id="calendericon-anti">&#128197;</span>
+														</td>
 													</tr>
 												</table>
 											</div>
@@ -699,24 +747,28 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 																Date</label></td>
 													</tr>
 													<tr>
-														<td><input type="date" name="endDate"
-															style="width: 90%; height: 59%; position: relative; left: 20px; top: -60px;"></td>
+														<td><input type="text" name="endDate"
+															style="width: 70%; height: 59%; position: relative; left: 20px; top: -60px;" id="calendericonEnd" value="<%=getRecord.getEndDate()%>">
+															<span id="calendericon-end">&#128197;</span>
+															</td>
 													</tr>
 													<tr>
-														<td><input type="date" name="endDate2"
-															style="width: 90%; height: 59%; position: relative; left: 20px; margin-top: -10px; top: -60px;"></td>
+														<td><input type="text" name="endDate2"
+															style="width: 70%; height: 59%; position: relative; left: 20px; margin-top: -10px; top: -60px;" id="calendericonEnd2" value="<%=getRecord.getEndDate2()%>">
+															<span id="calendericon-end2">&#128197;</span>
+															</td>
 													</tr>
 												</table>
 											</div>
 											<div style="flex: 3">
 												<table>
 													<tr>
-														<td><span style="position: relative; top: -45px;">Week
+														<td><span style="position: relative; top: -45px;position:relative;right: -30px;">Week
 																End </span></td>
 													</tr>
 													<tr>
 														<td><input type="text" name=""
-															style="width: 60%; height: 120%; position: relative; top: 8px; padding-top: 7px; margin-left: 5px;"></td>
+															style="width: 60%; height: 120%; position: relative; top: 8px; padding-top: 7px; margin-left: 25px;"></td>
 													</tr>
 												</table>
 											</div>
@@ -785,7 +837,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 						class="arrow-down3">&#9658;</span></span>Quote Info
 				</div>
 				<div id="panel3"
-					style=" width: 96%;border:1px solid black; margin-left: 24px;">
+					style=" width: 96%;border:1px solid black; margin-left: 27px;">
 
 					<div style="width: 100%;">
 						<label style="position: relative; top: 100px; left: 190px;">Bid
@@ -944,7 +996,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 					<div style="width: 100%;">
 						 <div style="display: flex;">
 					
-								<div
+					<div
 					style="width: 100%; margin-bottom: 180px; margin-left: 230px; margin-top: 20px;">
 					<div class="upload-container" id="owb1">
 					<label style="position: relative;top: 70px;left: -120px;">Quote Document *</label>
@@ -1013,7 +1065,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 								<table style="margin-top: -160px;margin-left: -20px;">
 								<tr>
 									<td> <label id="datesError" class="error">Date shown on Quote</label></td>
-									<td><input type="text" name="dateShowOnQuote" style="height: 34px;" id="showDateInput">
+									<td><input type="text" name="dateShowOnQuote" style="height: 34px;" id="showDateInput" value="<%=getRecord.getDateShowOnQuote()%>">
 									<span id="calendericonShowDate">&#128197;</span>
 									</td>
 								</tr>
@@ -1028,10 +1080,11 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 					
 				</div>
 				<!--submit quote is start here  -->
-		<div  class="toggle-bar " style="margin-left: 2%;margin-right: 2%;">
-		<label class="toggle-button2 comment">&nbsp;<i class='fas fa-caret-right' style="color:#009EFF; "></i>Submit Quote</label>
-		<div class="toggle-content2">
-		<div class="prepare-quote" style="border: 1px solid black;margin-bottom: 2px;">
+		<div  class="toggle-bar " style="margin-left: 2%;margin-right: 2%;margin-top: 2%; ">
+		<label class="toggle-button2 comment" style="background: #e4e6e9;border:1px solid black;font-size: 15px;height: 40px;padding: 10px 0px 10px 0px;">&nbsp;<i class='fas fa-caret-right'></i>Submit Quote</label>
+		</div>
+		<div class="toggle-content2" style="width: 96%;margin-left: 26px;margin-top: -5px;">
+		<div class="prepare-quote" style="border: 1px solid black;margin-bottom: 1px;">
 		<table class="SO" style="margin-left: 10px;">
 			<tr>
 				<td><label id="lqsa">Quote Submitted On<span style="color:red;font-weight:bold">*</span></label></td>
@@ -1044,26 +1097,28 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 		</table>
 		<br>
 		</div>
-	</div>	
+
 	</div><!-- submit quote close here -->
 	<!-- comment history start here -->
-		<div  class="toggle-bar " style="margin-right: 2%;margin-left: 2%;">
-		<label class="toggle-button3 comment">&nbsp;<i class='fas fa-caret-right' style="color:#009EFF; "></i> Comment History</label>
-		<div class="toggle-content3">
+		<div  class="toggle-bar " style="margin-right: 2%;margin-left: 2%;margin-top: 10px;background: #e4e6e9">
+		<label class="toggle-button3 comment" style="border: 1px solid black;height: 40px;padding: 10px 0px 0px 10px;">&nbsp;<i class='fas fa-caret-right' style="color:#009EFF; "></i> Comment History</label>
+		</div>
+		
+		<div class="toggle-content3" style="width: 98%;">
 		<%
 			/* List<OFA> clist = OFALocalServiceUtil.getOFAs(-1, -1);
 			for(OFA ofa: clist) */
 		%>
 		
-			<div class="timeline" style="border: 1px solid black;">
+			<div class="timeline" style="border: 1px solid black;margin-left: 25px;">
 				
 				   <%
   			    	List<smallwork> getsmallworks = smallworkLocalServiceUtil.getsmallworks(-1,-1);
 
-  			    	System.out.println(getsmallworks.get(1).getContactName());
+  			    	System.out.println("Size of work "+getsmallworks.size());
   					
   			    	%>
-			
+					
 				<div class="timeline__component"><%=getsmallworks.get(1).getCustomerName() %></div>
 				<div class="timeline__middle">
    					<div class="timeline__point"></div>
@@ -1075,15 +1130,14 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
   			
   			    </div>
 			</div>
-			<%
-			%>
+			
 		</div>
 		</div>
 	<!--comment history close here  -->
 	</div>
 		</div>
 		<div>
-			<textarea style="width: 100%;margin-top: 30px;padding-bottom: 20px;" required></textarea>
+			<textarea style="width: 100%;margin-top: 10px;padding-bottom: 20px;" required></textarea>
 		</div>
 		<div style="float: right;">
 			<button class="btn btn-primary" style="padding: 10px 20px 10px 20px">Save</button>
@@ -1094,13 +1148,32 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 		</div>
 	</form> 
 	</div>
+		</div>	
 </body>
 
 <script type="text/javascript">
 
 	$( document ).ready(function() {
-		$('.toggle-content11').hide();
-		$('.toggle-content12').hide();
+		
+		 $("#calendericon-project").click(function(){
+			  $("#projectDate").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+			  $("#projectDate").focus();
+		  });
+		 $("#calendericon-anti").click(function(){
+			  $("#anticipatedDate").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+			  $("#anticipatedDate").focus();
+		  });
+		 $("#calendericon-end").click(function(){
+			  $("#calendericonEnd").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+			  $("#calendericonEnd").focus();
+		  });
+		 $("#calendericon-end2").click(function(){
+			  $("#calendericonEnd2").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+			  $("#calendericonEnd2").focus();
+		  });
+		
+	$('.toggle-content11').hide();
+	$('.toggle-content12').hide();
 		
 	$(".arrow-downn").hide();
 	$("#flipp").click(function(){
@@ -1162,6 +1235,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 			  $("#showDateInput").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
 			  $("#showDateInput").focus();
 		  });
+		  
 		  
 		  /* Drop zone API */
 			

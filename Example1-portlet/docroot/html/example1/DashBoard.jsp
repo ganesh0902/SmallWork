@@ -46,7 +46,7 @@ body {
 		</div>
 		<div style="flex:5;">
 			
-			<div> <small style="font-size: 15px;color: white;position: relative;left: 320px;top: 10px;">My Site</small> <small style="background-color: white;position: relative;left: 335px;top: 13px;padding:15px 30px 15px 30px;border-radius:40px;"> ff</small> <label style="float: right;color:white;; margin-right: 20px;">Welcome <br>Ganesh Sakhare</label></div>
+			<div> <small style="font-size: 17px;color: white;position: relative;left: 400px;top: 1px;">My Site</small> <small style="position: relative;left: 335px;top: 13px;padding:10px 20px 10px 20px;border-radius:40px;"> <img alt="My Account" class="user-avatar-image" src="/image/user_male_portrait?img_id=0&amp;t=1680595284530" style="width: 7%;border-radius:20px;position: relative;top: -12px;right: -65px;"></small> <label style="float: right;color:white;; margin-right: 20px;">Welcome <br>Ganesh Sakhare</label></div>
 		</div>
 	</div><!-- header section close here -->
 	<div class="container" style="width: 100%;background-color: #F0F0F0">
@@ -61,7 +61,7 @@ body {
 						<p:param name="name" value="vinit"></p:param>
 						<p:param name="jspPage" value="/html/example1/view.jsp"></p:param>
 						</p:renderURL> <a type="button" href="${reuqestToQuote}"
-						class="btn btn-sm btn-warning">page</a>
+						class="btn btn-sm btn-warning">Small Work</a>
 					
 					 </small>
 				</div>
@@ -254,9 +254,17 @@ body {
 								  <p:param name="stage" value="prepareReviewQuote"></p:param>
 								<p:param name="jspPage" value="/html/example1/prepareReviewQuote.jsp"></p:param>
 							   </p:renderURL> 
-								<a href="${prepareReviewQuote }">prepareReviseQuote</a></td>
+								<a href="${prepareReviewQuote }">prepare Revise Quote</a></td>
 								
 							<%}
+							if(getsmall.getStage().equals("orderAcceptance"))
+							{
+							%>
+								<td>
+									<a href="#"> order Acceptance</a>
+								</td>
+							<%	
+							}	
 							%>
 							<td><%=getsmall.getAnticipatedDate() %></td>							
 							<td>--</td>

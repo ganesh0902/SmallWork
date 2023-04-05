@@ -166,7 +166,10 @@ public class Example1 extends MVCPortlet {
 		String dateShowOnQuote=ParamUtil.getString(request,"dateShowOnQuote");		
 		int projectSell=ParamUtil.getInteger(request,"projectSell");
 	
-		
+		System.out.println(projectDate);
+		System.out.println(anticipatedDate);
+		System.out.println(endDate);
+		System.out.println(endDate2);
 		String quoteSubmitDate = ParamUtil.getString(request,"quoteSubmitDate");
 		String winProbability=ParamUtil.getString(request,"winProbability");
 		
@@ -193,15 +196,15 @@ public class Example1 extends MVCPortlet {
 		work.setContactName(contactName);
 		work.setPhone(phone);
 		work.setEmail(email);
-		//work.setProjectDate(projectDate);
-		//work.setAnticipatedDate(anticipatedDate);
-		//work.setEndDate(endDate);
-		//work.setEndDate2(endDate2);
+		work.setProjectDate(projectDate);
+		work.setAnticipatedDate(anticipatedDate);
+		work.setEndDate(endDate);
+		work.setEndDate2(endDate2);
 		
 		//work.setBidInfor(bidInfor);
 		//work.setQuotationName(quotationName);
 		work.setProjectCost(projectCost);
-		//work.setDateShowOnQuote(dateShowOnQuote);
+		work.setDateShowOnQuote(dateShowOnQuote);
 		work.setProjectSell(projectSell);
 		work.setQuoteSubmitDate(quoteSubmitDate);
 		work.setWinProbability(winProbability);
@@ -213,7 +216,6 @@ public class Example1 extends MVCPortlet {
 	@ProcessAction(name="stausOfSubmitedQuote")
 	public void stausOfSubmitedQuote(ActionRequest request,ActionResponse response) throws SystemException, PortalException{
 		
- System.out.println("method Called");
 		
 		String sosq = ParamUtil.getString(request,"Status_Of_Submitted_Quote");
 		System.out.println("Status_Of_Submitted_Quote"+sosq);
@@ -290,10 +292,12 @@ public class Example1 extends MVCPortlet {
 		soq = statusofsubmittedquoteLocalServiceUtil.addstatusofsubmittedquote(soq);
 		
 		smallwork work = smallworkLocalServiceUtil.getsmallwork(currentId);
-		work.setStage("prepareReviewQuote");
-		smallworkLocalServiceUtil.updatesmallwork(work);
+		
 		
 		if(soq!=null){
+			System.out.println("go to order acceptance");
+			work.setStage("orderAcceptance");
+			smallworkLocalServiceUtil.updatesmallwork(work);
 			System.out.println("data inserted successfully");
 			response.setRenderParameter("mvcPath","/html/example1/DashBoard.jsp");
 		}
@@ -303,6 +307,8 @@ public class Example1 extends MVCPortlet {
 		System.out.println("status of submit quote :="+sosq);
 		if(sosq.equals("Amend Bid"))
 		{
+			work.setStage("prepareReviewQuote");
+			smallworkLocalServiceUtil.updatesmallwork(work);
 			response.setRenderParameter("mvcPath","/html/example1/DashBoard.jsp");
 		}	
 		
@@ -393,10 +399,10 @@ public class Example1 extends MVCPortlet {
 		work.setContactName(contactName);
 		work.setPhone(phone);
 		work.setEmail(email);
-		//work.setProjectDate(projectDate);
-		//work.setAnticipatedDate(anticipatedDate);
-		//work.setEndDate(endDate);
-		//work.setEndDate2(endDate2);
+		work.setProjectDate(projectDate);
+		work.setAnticipatedDate(anticipatedDate);
+		work.setEndDate(endDate);
+		work.setEndDate2(endDate2);
 		
 		//work.setBidInfor(bidInfor);
 		//work.setQuotationName(quotationName);

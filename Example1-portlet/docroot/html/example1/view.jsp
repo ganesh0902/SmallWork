@@ -313,21 +313,21 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <portlet:actionURL var="save" name="saveAction"/>
 <portlet:actionURL var="save2" name="saveAction2"/>
 	
-	<!-- this is for update -->
+	<%-- <!-- this is for update -->
 	<p:renderURL var="update">
 		<p:param name="name" value="vinit"></p:param>
 		<p:param name="jspPage" value="/html/example1/SubmitQuote.jsp"></p:param>
 	</p:renderURL> <a type="button" href="${update}"
-						class="btn btn-sm btn-warning">page</a>
+						class="btn btn-sm btn-warning">page</a> --%>
 		
 	<!-- this is for dashboard -->
 	<p:renderURL var="dashboard">
 		<p:param name="name" value="vv"></p:param>
 		<p:param name="jspPage" value="/html/example1/DashBoard.jsp"></p:param>
 	</p:renderURL> 
-	<a type="button" href="${dashboard}"class="btn btn-sm btn-warning">go to  dashboard</a>
+	<a type="button" href="${dashboard}" style="color: white;">go to  Back</a>
 						
-	<!-- end of dashboard -->	
+	<%-- <!-- end of dashboard -->	
 	<p:renderURL var="example">
 		<p:param name="name" value="vv"></p:param>
 		<p:param name="jspPage" value="/html/example1/example.jsp"></p:param>
@@ -382,7 +382,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</p:renderURL> 
 	<a type="button" href="${Dropzone}"class="btn btn-sm btn-warning">go to Dropzone </a>
 						
-		
+		 --%>
 						
 	<!-- First section -->
 	<div class="outer" id="flip1" style="border: 1px solid gray;border-bottom: none;size: 20px;padding: 10px 0px 10px 0px; background: #e4e6e9;"><span class="arrow1"><span class="arrow-up1">&#x25BC;</span><span class="arrow-down1">&#9658;</span></span>Quote Form
@@ -567,7 +567,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 												style="width: 130%; height: 60%; margin-top: -80px;"
 												id="lead" name="lead" class="error"></textarea> <i
 											class='far fa-comment-dots'
-											style='font-size: 20px; position: relative; top: -33px; left: 306px;'></td>
+											style='font-size: 20px; position: relative; top: -33px; left: 306px;'></i></td>
 									</tr>
 									<tr>
 										<td><label class="error"
@@ -582,7 +582,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 												<option>South East</option>
 												<option>Leeds</option>
 										</select> <i class='far fa-comment-dots'
-											style='font-size: 20px; position: relative; top: -130px; left: 270px;'></td>
+											style='font-size: 20px; position: relative; top: -130px; left: 270px;'></i></td>
 									</tr>
 									<tr>
 										<td><label class="error"
@@ -593,7 +593,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 											style="height: 70%; width: 115%; margin-top: -360px;"
 											size="22" onkeyup="lettersOnly(this)"> <i
 											class='far fa-comment-dots'
-											style='font-size: 20px; position: relative; top: -195px; left: 270px;'></td>
+											style='font-size: 20px; position: relative; top: -195px; left: 270px;'></i></td>
 									</tr>
 								</table>
 							</div>
@@ -753,11 +753,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 														xmlns="http://www.w3.org/2000/svg" width="28" height="28"
 														fill="currentColor" class="bi bi-cloud-arrow-up"
 														viewBox="0 0 16 16">
- 				 <path fill-rule="evenodd"
+ 														 <path fill-rule="evenodd"
 															d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
-  				 <path
+  															 <path
 															d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
-		</svg>
+													</svg>
 													<p style="margin-left: 30px; margin-top: 0px;">
 														Drop Files Here <span style="margin-left: 45px;">or</span>
 
@@ -789,7 +789,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 					<span class="arrow3"><span class="arrow-up3">&#x25BC;</span><span
 						class="arrow-down3">&#9658;</span></span>Project Info
 				</div>
-				<div id="panel3" style="border: 1px; width: 96%; margin-left: 24px;">
+				<div id="panel3" style="border: 1px solid black; width: 96%; margin-left: 27px;">
 
 					<div style="width: 100%;">
 						<label style="position: relative; top: 100px; left: 190px;">Bid
@@ -811,11 +811,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 										xmlns="http://www.w3.org/2000/svg" width="28" height="28"
 										fill="currentColor" class="bi bi-cloud-arrow-up"
 										viewBox="0 0 16 16">
- 				 <path fill-rule="evenodd"
+ 											 <path fill-rule="evenodd"
 											d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
-  				 <path
+  											 <path
 											d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
-		</svg>
+									</svg>
 									<p style="margin-left: 30px;">
 										Drop Files Here <span style="margin-left: 45px;">or</span>
 
@@ -938,15 +938,14 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 												style="font-size: 15px; background-color: #a069c3; border-radius: 9px; padding: 0px 1px 0px 1px;"></i>Add
 											New
 										</button></span>
-								</div>
+								
 							</div>
 						</div>
 					</div>
 					<!-- Bid sheet section close here -->
 				</div>
 
-				<div
-					style="width: 100%; margin-bottom: 180px; margin-left: 230px; margin-top: 20px;">
+				<div style="width: 100%; margin-bottom: 180px; margin-left: 230px; margin-top: 20px;">
 					<div class="upload-container" id="owb1">
 					<label style="position: relative;top: 70px;left: -120px;">Quote Document *</label>
 						<div id="parent"
@@ -966,11 +965,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 									xmlns="http://www.w3.org/2000/svg" width="28" height="28"
 									fill="currentColor" class="bi bi-cloud-arrow-up"
 									viewBox="0 0 16 16">
- 				 <path fill-rule="evenodd"
+ 				 					<path fill-rule="evenodd"
 										d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
-  				 <path
+  										 <path
 										d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
-		</svg>
+								</svg>
 								<p style="margin-left: 30px; margin-top: 0px;">
 									Drop Files Here <span style="margin-left: 45px;">or</span>
 
@@ -987,7 +986,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 							</div>
 							<input type="hidden" name='<portlet:namespace/>owb' id="files3">
 						</div>
-						<div></div>
+						<div>
+						
 					</div>
 				</div>
 			</div>
@@ -1018,8 +1018,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 						<tr>
 							<td><label id="datesError" class="error">Date shown
 									on Quote</label></td>
-							<td><input type="date" name="dateShowOnQuote"
-								style="height: 34px;" id="dates"></td>
+							<td><input type="text" name="dateShowOnQuote"
+								style="height: 34px;" id="showDates">
+							<span id="calendericon-pped6"
+							style="padding-left: 150px; position: relative; left: -155px;">&#128197;</span>	
+							</td>
 						</tr>
 						<tr>
 							<td><label id="costsError" class="error">Overall
@@ -1031,7 +1034,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 				</div>
 			</div>
 		</div>
-
+</div>
 		<div>
 			<textarea style="width: 100%;margin-top: 30px;padding-bottom: 20px;"></textarea>
 		</div>
@@ -1042,6 +1045,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<button class="btn btn-danger" style="padding: 10px 20px 10px 20px">Cancel</button>
 					
 		</div>
+</div>		
 	</form> 	
 	<!-- Jquery is start -->
 	
@@ -1064,7 +1068,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		  $("#endDate2").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
 		  $("#endDate2").focus();
 	  }); 
-	
+	 $("#calendericon-pped6").click(function(){
+		 
+		  $("#showDates").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+		  $("#showDates").focus();
+	  }); 
 	 
 	/*anticipatedDate  */
 	$( document ).ready(function() {
@@ -1454,6 +1462,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  		else{
  			var gen=generate();
 			document.getElementById("quote").value=gen; 
+			alert("Quote Reference for econsys is "+gen);
  		}	
  		return found;
 	});

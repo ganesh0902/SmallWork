@@ -32,6 +32,14 @@ integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="ano
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" 
   crossorigin="anonymous"></script>
 	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js" integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/basic.css" rel="stylesheet"/>	
+	
 <style type="text/css">
 	
 	#section1_parent{
@@ -277,6 +285,158 @@ integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="ano
 }
 div.timeline:last-of-type .timeline__middle{
 	height:10px;
+}
+#parent{
+		width: 1200px;
+		height: 120px;
+		display: flex;
+		flex-direction: row;
+	
+	}
+	#child1{
+	
+		flex:6;
+		border: 0.5px solid grey;
+	}
+	#child2{
+		flex:2;
+		border-bottom: 0.5px solid grey;
+		border-top: 0.5px solid grey;
+	}
+	#child3{
+		flex:2;
+		border: 0.5px solid grey;	
+	}
+	.button {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.button1 {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.file {
+		
+		width:100px;
+  		border: 2px solid #00aeff;
+ 		color: #00aeff;
+ 		background-color: white;
+  		padding: 4px 8px;
+  		border-radius: 3px;
+  		font-size: 20px;
+  		font-weight: bold;
+}
+ 		#parent{
+		width: 500px;
+		height: 150px;
+		display: flex;
+		flex-direction: row;
+		margin-left: 30%;
+		
+	}
+	#child1{
+		flex:5;
+		border: 0.5px solid grey;
+	}
+	#child2{
+		flex:3;
+		border-bottom: 0.5px solid grey;
+		border-top: 0.5px solid grey;
+	}
+	#child3{
+		flex:2;
+		border: 0.5px solid grey;	
+	}
+	.button {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.button1 {
+		border:1 px solid grey;
+		margin-left:4px;
+		margin-right:2px;
+		background-color: #a069c3;
+		color:white;
+		width:90%;	
+	}
+	.file {
+		
+		width:100px;
+  		border: 2px solid #00aeff;
+ 		color: #00aeff;
+ 		background-color: white;
+  		padding: 4px 8px;
+  		border-radius: 3px;
+  		font-size: 20px;
+  		font-weight: bold;
+}
+.flex-container{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.right-item{
+		width: 65%;
+	}
+	.right-item1{
+	justify-content: flex-end;
+	}
+#generate{
+	
+	position: relative;
+	top: 60px;
+	left: 50px;
+	
+}	
+#panels{
+	
+	padding: 10px 0px 10px 20px;
+	color: white;
+	font-size: 18px;
+	margin-bottom: -20px;
+}
+#calendericon-end{
+	
+	position: relative;
+	left: 20px;
+	top: -70px;
+}
+#calendericon-project{
+	
+	position: relative;
+	top: -30px;
+	left: 170px;
+}
+#calendericon-anti{
+	
+	position: relative;
+	top: -40px;
+	left: 170px;
+}
+#calendericon-end2{
+	
+	position: relative;
+	top: -70px;
+	left: 20px;
+}
+#projectDate{
+	
+	position: relative;
+	top: 10px;
+	padding: 7px 0px 7px 0px;
 }
 	</style>	
 </head>
@@ -562,14 +722,18 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 													<tr>
 														<td><label style="margin-top: -20px;position: relative;right: -20px;" class="error" id="projectDateError">Project
 																Programme</label></td>
-														<td><input type="date" name="projectProgramDate"
-															style="width: 90%; height: 59%; margin-top: -20px;" id="projectDate" name="projectDate"></td>
+														<td><input type="text" 
+															style="width: 90%; height: 59%; margin-top: -20px;" id="projectDate" name="projectDate" value="<%=getRecord.getProjectDate()%>">
+															<span id="calendericon-project">&#128197;</span>
+															</td>
 													</tr>
 													<tr>
 														<td><label style="margin-top: -20px;" class="error" id="anticipatedDateError">Anticipated
 																Order Date</label></td>
-														<td><input type="date" name="AnticipatedDate"
-															style="width: 90%; height: 59%; margin-top: -20px;" id="anticipatedDate" name="anticipatedDate"></td>
+														<td><input type="text" 
+															style="width: 90%; height: 59%; margin-top: -20px;" id="anticipatedDate" name="anticipatedDate" value="<%=getRecord.getAnticipatedDate()%>">
+															<span id="calendericon-anti">&#128197;</span>
+															</td>
 													</tr>
 												</table>
 											</div>
@@ -581,12 +745,17 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 																Date</label></td>
 													</tr>
 													<tr>
-														<td><input type="date" name="endDate"
-															style="width: 90%; height: 59%; position: relative; left: 20px; top: -60px;"></td>
+														<td><input type="text" name="endDate"
+															style="width: 90%; height: 59%; position: relative; left: 20px; top: -60px;" id="endDate" value="<%=getRecord.getEndDate()%>">
+															<span id="calendericon-end">&#128197;</span>
+															
+															</td>
 													</tr>
 													<tr>
-														<td><input type="date" name="endDate2"
-															style="width: 90%; height: 59%; position: relative; left: 20px; margin-top: -10px; top: -60px;"></td>
+														<td><input type="text" name="endDate2"
+															style="width: 90%; height: 59%; position: relative; left: 20px; margin-top: -10px; top: -60px;" id="endDate2" value="<%=getRecord.getEndDate2()%>">
+															<span id="calendericon-end2">&#128197;</span>
+															</td>
 													</tr>
 												</table>
 											</div>
@@ -605,34 +774,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 										</div>
 									</fieldset>
 								</div>
-								<!-- <div style="flex: 5">
-									<fieldset
-										style="border: 1px solid gray; width: 92%; height: 300px; margin-left: 2px;">
-										<legend
-											style="width: fit-content; margin-left: 10px; border-bottom: none; color: rgb(71, 143, 202); font-size: 16px; font-family: Segoe UI;">Upload
-											RTQ Documents</legend>
-										<div
-											style="display: flex; border: 1px solid black; width: 90%; margin-left: 30px; margin-top: 30px;">
-											<div style="flex: 5;"></div>
-											<div style="flex: 3;border: 1px solid black;text-align: center;">
-												<span><i class="fa fa-upload" style="font-size: 36px;"></i></span>
-												<label>Drop file here <br> or
-												</label>
-												<button
-													style="border: 1px solid green; color: green; width: 90%; height: 25%;">Brows
-													File</button>
-											</div>
-											<div style="flex: 2; border: 1px solid black;">
-												<button
-													style="background-color: #9585bf; width: 100%; color: white; margin-top: 40px; font-size: 12px; border: none;">
-													Link to file</button>
-												<button
-													style="background-color: #9585bf; width: 100%; color: white; margin-top: 20px; margin-bottom: 30px; font-size: 12px; border: none;">Link
-													to Browser</button>
-											</div>
-										</div>
-									</fieldset>
-								</div> -->
+								
 							</div>
 						</div>
 					</div>
@@ -679,52 +821,68 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 						</div>
 						</div><!-- quote information end here -->				
 						
-					<div style="width: 100%;">
-						
-						<div style="display: flex;">
-							<div style="flex:6;">
-								<div
-									style="display: flex; border: 1px solid black; width: 40%; margin-left: -20px; margin-top: 30px;margin-left: 150px;position: relative;left: -50px;">
-									<div style="flex: 4;">
-									</div>
-									<div style="flex: 3;height: 140px;border: 1px solid black;">
-										<span><i class="fa fa-upload" style="font-size: 36px"></i></span>
-										<label>Drop file here <br> or
-										</label>
-										<button
-											style="border: 1px solid green; color: green; width: 90%; height: 25%;">Brows
-											File</button>
-									</div>
-									<div style="flex: 2; border: 1px solid black;height: 140px;">
-										<button
-											style="background-color: #9585bf; width: 100%; color: white; margin-top: 40px; font-size: 12px; border: none;">
-											Link to file</button>
-										<button
-											style="background-color: #9585bf; width: 100%; color: white; margin-top: 20px; margin-bottom: 30px; font-size: 12px; border: none;">Link
-											to Browser</button>
-									</div>
-									
-								</div>	
-									<div style="flex:4;width: 35%;border: 1px solid black;position: relative;top: -140px;left: 700px;">
-										<div style="display: flex;">
-											<div style="flex:5;height: 140px;border: 1px solid black;">
+							
+						<div style="width: 100%; margin-bottom: 10px; margin-left: 220px; margin-top: 20px;">
+					<div class="upload-container" id="owb1">
+					<label style="position: relative;top: 70px;left: -120px;">Quote Document *</label>
+						<div id="parent"
+							style="margin-right: 20%; margin-left: 20px; width: 550px;">
 												
-											</div>
-											<div style="flex:5;height: 140px;border: 1px solid black;">
-											
-											</div>
-										</div>					
-								</div>
-								<span style="position: relative;top: -240px;left: 160px;">Generate Quote <br>Document</span>	
-							</div><!-- file upload close -->
+							<div id="child1">
+								<table style="margin-top: 10px; margin-left: 10px;">
+									<tr id="preview3">
+										<td><span></span>
+										<td>
+									</tr>
+								</table>
+							</div>
+
+							<div class="mydropzone3" id="child2">
+								<svg style="margin-left: 70px; margin-top: 20px"
+									xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+									fill="currentColor" class="bi bi-cloud-arrow-up"
+									viewBox="0 0 16 16">
+ 				 					<path fill-rule="evenodd"
+										d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
+  										 <path
+										d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+								</svg>
+								<p style="margin-left: 30px; margin-top: 0px;">
+									Drop Files Here <span style="margin-left: 45px;">or</span>
+
+								</p>
+								<button class="file mydropzone" type="button"
+									style="margin-left: 25px; margin-top: -1px; width: 70%;">BrowseFiles</button>
+							</div>
+							<div id="child3">
+								<br> <br>
+								<button type="button" class="button1" style="margin-left: 5px;">LinkToFile</button>
+								<br>
+								<button type="button" class="button"
+									style="margin-left: 5px; margin-top: 5px;">LinkToDropbox</button>
+							</div>
+							<input type="hidden" name='<portlet:namespace/>owb' id="files3">
 						</div>
-						
+						<div>
+						</div>
+					</div>
+					<div style="width: 30%;display: flex;height: 155px;position: relative;left: 650px;top: -150px;">
+						<div style="flex:5;border: 1px solid black;">
+							<button class="btn btn-primary" id="generate">Generate</button>
+						</div>
+						<div style="flex:5;border: 1px solid black;">
+						</div>
+					</div>
+					</div> 										
 						<div style="margin-top: -50px;position: relative;top: -80px;">
 							
 							<div id="bidInformation">
 								<div style="margin-right: 10px; margin-left: 20px;">
+								<div style="width: 100%;background-color: #307ecc;" id="panels">
+									<label style="color: white;">Bid Information</label>
+								</div>
 									<table class="table table-bordered"
-										style="margin-top: -30px; font-size: 12px;" id="tblData">
+										style="margin-top: -30px; font-size: 12px;margin-top: 20px;" id="tblData">
 										<thead>
 											<tr>
 												<th scope="col" width="100px" height="20px;">Cost/Code..
@@ -803,32 +961,52 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 								</div>
 							</div>
 						</div>
-					 <div style="width: 100%;position: relative;top: -80px;">
-						<label style="position: relative; top: 100px; left: 190px;">Bid
-							Sheet</label>
-						<div
-							style="display: flex; border: 1px solid black; width: 50%; margin-left: 290px; margin-top: 30px;">
-							<div style="flex: 5;"></div>
-							<div style="flex: 2; border: 1px solid black;">
-								<span style="padding-left: 40px;"><i class="fa fa-upload"
-									style="font-size: 36px"></i></span> <label style="padding-left: 20px;">Drop
-									file here <br> or
-								</label>
-								<button
-									style="border: 1px solid green; color: green; width: 90%; height: 25%; margin-left: 5px;">Brows
-									File</button>
+				<div style="width: 100%; margin-bottom: 80px; margin-left: 230px; margin-top: -70px;">
+					<div class="upload-container" id="owb1">
+					<label style="position: relative;top: 70px;left: -120px;">Quote Document *</label>
+						<div id="parent"
+							style="margin-right: 20%; margin-left: 20px; width: 550px;">
+												
+							<div id="child1">
+								<table style="margin-top: 10px; margin-left: 10px;">
+									<tr id="preview3">
+										<td><span></span>
+										<td>
+									</tr>
+								</table>
 							</div>
-							<div style="flex: 2; border: 1px solid black;">
-								<button
-									style="background-color: #9585bf; width: 100%; color: white; margin-top: 40px; font-size: 12px; border: none;">
-									Link to file</button>
-								<button
-									style="background-color: #9585bf; width: 100%; color: white; margin-top: 20px; margin-bottom: 30px; font-size: 12px; border: none;">Link
-									to Browser</button>
+
+							<div class="mydropzone3" id="child2">
+								<svg style="margin-left: 70px; margin-top: 20px"
+									xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+									fill="currentColor" class="bi bi-cloud-arrow-up"
+									viewBox="0 0 16 16">
+ 				 					<path fill-rule="evenodd"
+										d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z" />
+  										 <path
+										d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+								</svg>
+								<p style="margin-left: 30px; margin-top: 0px;">
+									Drop Files Here <span style="margin-left: 45px;">or</span>
+
+								</p>
+								<button class="file mydropzone" type="button"
+									style="margin-left: 25px; margin-top: -1px; width: 70%;">BrowseFiles</button>
 							</div>
-						</div>	
+							<div id="child3">
+								<br> <br>
+								<button type="button" class="button1" style="margin-left: 5px;">LinkToFile</button>
+								<br>
+								<button type="button" class="button"
+									style="margin-left: 5px; margin-top: 5px;">LinkToDropbox</button>
+							</div>
+							<input type="hidden" name='<portlet:namespace/>owb' id="files3">
+						</div>
+						<div>
+						</div>
+					</div>
 						<div style="width: 90%;">
-							<table style="">
+							<table style="position: relative;left: -190px;">
 								<tr>
 									<td><label style="margin-left: 20px;" id="bidInforError" class="error">Does the Bid
 											Sheet meet company <br>authorisation criteria?
@@ -847,7 +1025,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 					</div>				 
 				</div>
 	<!-- comment history start here -->
-		<div  class="toggle-bar " style="margin-right: 2%;margin-left: 2%;">
+		<div  class="toggle-bar " style="margin-right: 2%;margin-left: 2%;margin-top: 2%;background: #e4e6e9;;">
 		<label class="toggle-button3 comment">&nbsp;<i class='fas fa-caret-right' style="color:#009EFF; "></i> Comment History</label>
 		<div class="toggle-content3">
 		<%
@@ -883,7 +1061,7 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 	</div>
 		</div>
 		<div>
-			<textarea style="width: 100%;margin-top: 30px;padding-bottom: 20px;"></textarea>
+			<textarea style="width: 100%;margin-top: 10px;padding-bottom: 20px;" required></textarea>
 		</div>
 		<div style="float: right;">
 			<button class="btn btn-primary" style="padding: 10px 20px 10px 20px">Save</button>
@@ -899,14 +1077,55 @@ smallwork getRecord = smallworkLocalServiceUtil.getsmallwork(record); %>
 <script type="text/javascript">
 
 	$( document ).ready(function() {
-		$('.toggle-content11').hide();
-		$('.toggle-content12').hide();
+		
+	$("#calendericon-project").click(function(){
+		$("#projectDate").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+		$("#projectDate").focus();
+ 	 });	
+	$("#calendericon-anti").click(function(){
+		$("#anticipatedDate").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+		$("#anticipatedDate").focus();
+	 });
+	
+	$("#calendericon-end").click(function(){
+		$("#endDate").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+		$("#endDate").focus();
+	 });
+	$("#calendericon-end2").click(function(){
+		$("#endDate2").datepicker({dateFormat: 'dd/mm/yy',numberOfMonths: 3, showCurrentAtPos:0,minDate:$("#inp1").val(),maxDate:$("#inp4").val()});
+		$("#endDate2").focus();
+	 });
+		
+	$('.toggle-content11').hide();
+	$('.toggle-content12').hide();
 		
 	$(".arrow-downn").hide();
 	$("#flipp").click(function(){
 	    $('.arrow-upp,.arrow-downn').toggle();
 	$("#panell").slideToggle("slow");
 	});
+	
+	  var mydz3= new Dropzone(".mydropzone3",{
+	    	url: "/Dropzone",
+	        maxFilesize: 10,
+	        addRemoveLinks: true,
+	        paramName: "file",	
+	        maxFiles: 5,
+	        autoProcessQueue: false,
+	            
+	    });
+	   
+	     mydz3.on("addedfile", function(file) {
+	    	 
+	    	   this.removeFile(file);
+	    	  mydz1.createThumbnail(file,null,120,120);
+
+	    	  $("#files3").val(file.name);
+	    	   
+	    	  document.querySelector("#preview3").innerHTML =  file.name + "  " + file.size + " bytes";
+	    	  
+	    	}); 
+	
 	
 		$(".arrow-down1").hide();
 		$("#flip1").click(function(){
